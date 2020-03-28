@@ -397,7 +397,6 @@ def begin():
     over(startwindow)
     choose_level()
 '''关闭起始窗口，打开等级选择窗口'''
-    
 startwindow=Tk()
 startwindow.title('迷宫游戏')
 startwindow.geometry('600x650+330+6')
@@ -415,3 +414,5 @@ can_start.create_window((300,530),window=button_over)
 can_start.pack()
 startwindow.mainloop()
 '''设置起始窗口'''
+'''This is an example'''
+'''if you have more idea,please email me'''
