@@ -55,36 +55,3 @@ if __name__=='__main__':
     scale=1+width*2
     Make_Map(scale)
 '''
-def prim1(scale):           #深度优先制作迷宫
-    global Map
-    Map=set_Map(scale)
-    Will_check=[(scale-2,1)]
-    while len(Will_check)!=0:
-        x,y=Will_check[-1]
-        if check_position(x,y)!=0:
-            new=random.choice(check_position(x,y))
-            Will_check.append(new)
-            Map[new[0]][new[1]]=2
-            Map[(new[0]+x)//2][(new[1]+y)//2]=2
-        else:
-            Will_check.pop(-1)
-    print(Map)                    #待用GUI形式表现出来
-
-def prim2(scale):          #广度优先制作迷宫
-    global Map
-    Map=set_Map(scale)
-    Will_check=[(scale-2,1)]
-    while len(Will_check)!=0:
-        x,y=Will_check[0]
-        if check_position(x,y)!=0:
-            Will_check.pop(0)
-            new_list=check_position(x,y)
-            random.shuffle(new_list)
-            Will_check+=new_list
-            for new in new_list:
-                Map[new[0]][new[1]]=2
-                Map[(new[0]+x)//2][(new[1]+y)//2]=2
-        else:
-            Will_check.pop(0)     
-    print(Map)                    #待用GUI形式表现出来
-'''
